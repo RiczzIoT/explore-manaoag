@@ -1,0 +1,21 @@
+{
+  "name": "explore-manaoag",
+  "version": "1.0.0",
+  "description": "Web-based online platform for enhancing local tourism in Manaoag.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tailwindcss -i ./src/input.css -o ./public/css/style.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./public/css/style.css --watch"
+  },
+  "keywords": [
+    "php",
+    "tailwind",
+    "tourism"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.4"
+  }
+}

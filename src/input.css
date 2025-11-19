@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Ilalagay na natin yung sticky footer classes diretso sa HTML.
+*/
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.chat-bubble {
+    @apply fixed bottom-5 right-5 w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-3xl cursor-pointer shadow-lg z-[998];
+}
+.chat-window {
+    @apply fixed bottom-24 right-5 w-[350px] max-w-[90%] h-[450px] bg-white rounded-lg shadow-xl flex flex-col z-[999];
+    display: none;
+}
+.chat-header {
+    @apply p-4 bg-gray-800 text-white rounded-t-lg flex justify-between items-center;
+}
+.chat-close {
+    @apply bg-transparent border-none text-white text-2xl cursor-pointer;
+}
+.chat-body {
+    @apply flex-1 p-4 overflow-y-auto flex flex-col gap-3;
+}
+.chat-message {
+    @apply py-2 px-4 rounded-2xl max-w-[80%] leading-normal;
+}
+.chat-message.bot {
+    @apply bg-gray-200 text-gray-800 self-start;
+}
+.chat-message.user {
+    @apply bg-blue-600 text-white self-end;
+}
+.chat-footer {
+    @apply flex p-3 border-t border-gray-200;
+}
+.chat-footer input {
+    @apply flex-1 border border-gray-300 rounded-md py-2 px-3;
+}
+.chat-footer button {
+    @apply bg-blue-600 text-white border-none rounded-md px-4 ml-2 cursor-pointer;
+}
+.chat-message.typing {
+    @apply bg-gray-200 text-gray-500 self-start;
+}
+.typing-dots span {
+    @apply inline-block w-2 h-2 rounded-full bg-gray-500 mx-0.5;
+    animation: bounce 1.4s infinite both;
+}
+.typing-dots span:nth-child(1) { animation-delay: 0s; }
+.typing-dots span:nth-child(2) { animation-delay: 0.2s; }
+.typing-dots span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+
+@layer components {
+  .chat-suggestions {
+    @apply flex flex-col gap-2 mt-1.5 items-start;
+  }
+  .suggestion-btn {
+    @apply bg-white border border-gray-200 rounded-xl py-2 px-4 cursor-pointer text-left text-sm text-blue-600 transition-colors;
+  }
+  .suggestion-btn:hover {
+    @apply bg-gray-50;
+  }
+}
